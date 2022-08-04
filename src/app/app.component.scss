@@ -1,0 +1,17 @@
+.nav {
+  width: 100%;
+  padding-bottom: 3rem;
+
+  .list {
+    display: flex;
+    list-style: none;
+
+    &__element {
+      cursor: pointer;
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+}
