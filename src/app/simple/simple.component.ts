@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 
-type State = 'default' | 'clicked';
+type State = 'default' | 'clicked' | 'mousedown';
 
 @Component({
   selector: 'app-simple',
@@ -9,6 +9,7 @@ type State = 'default' | 'clicked';
   styleUrls: ['./simple.component.scss'],
   animations: [
     trigger('clickedState', [
+      // States
       state(
         'default',
         style({
@@ -27,17 +28,36 @@ type State = 'default' | 'clicked';
           width: '250px',
         })
       ),
+      state(
+        'mousedown',
+        style({
+          'background-color': 'red',
+          border: '1px solid black',
+          cursor: 'pointer',
+          height: '100px',
+          width: '250px',
+        })
+      ),
+      // Transitions
       transition('default => clicked', animate('250ms 100ms ease-in')), // 'default => clicked' sais when the transition should be fired
-      transition('clicked => default', animate('250ms 100ms ease-in')), // 'clicked => default' sais when the transition should be fired
+      transition('clicked => default', animate('500ms 100ms ease-out')), // 'clicked => default' sais when the transition should be fired
+      transition('default => mousedown', animate('250ms 50ms ease-in')),
+      transition('mousedown => default', animate('250ms 50ms ease-in')),
     ]),
   ],
 })
 export class SimpleComponent {
   clickInfo: State = 'default';
 
-  changeStyle(): void {
-    if (this.clickInfo === 'default') {
-      this.clickInfo = 'clicked';
-    } else this.clickInfo = 'default';
+  changeClickInfoState(): void {
+    if (this.clickInfo === 'default') this.clickInfo = 'clicked';
+    else this.clickInfo = 'default';
+  }
+
+  onMouseEnter(): void {
+    this.clickInfo = 'mousedown';
+    setTimeout(() => {
+      this.clickInfo = 'default';
+    }, 1000);
   }
 }

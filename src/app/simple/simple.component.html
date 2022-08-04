@@ -1,2 +1,6 @@
 <!-- @clickedState is the trigger that dispatch the animation -->
-<div [@clickedState]="clickInfo" (click)="changeStyle()"></div>
+<div
+  [@clickedState]="clickInfo"
+  (mouseenter)="onMouseEnter()"
+  (click)="changeClickInfoState()"
+></div>
