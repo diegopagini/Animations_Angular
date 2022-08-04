@@ -28,6 +28,7 @@ type State = 'default' | 'clicked';
         })
       ),
       transition('default => clicked', animate('250ms 100ms ease-in')), // 'default => clicked' sais when the transition should be fired
+      transition('clicked => default', animate('250ms 100ms ease-in')), // 'clicked => default' sais when the transition should be fired
     ]),
   ],
 })
