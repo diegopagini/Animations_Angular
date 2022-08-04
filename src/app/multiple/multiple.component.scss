@@ -1,12 +1,38 @@
 :host {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 70vh;
+  width: 100%;
 }
 
 .multiple {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.input {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  input {
+    min-width: 250px;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .numbers {
+    align-items: center;
+    display: flex;
+
+    span {
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 1rem;
+    }
+  }
 }

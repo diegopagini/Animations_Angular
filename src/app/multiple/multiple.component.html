@@ -5,3 +5,26 @@
 
   <div [@clickedState]="divThree" (click)="changeStateThree()"></div>
 </section>
+
+<hr />
+
+<section class="input">
+  <input
+    type="number"
+    (input)="onInputNumber($event)"
+    max="9"
+    min="0"
+    [(ngModel)]="numberEntered"
+  />
+
+  <div class="numbers">
+    <ng-container *ngFor="let number of numbers">
+      <span
+        [@numberEnteredState]="
+          numberEntered != number ? 'unselected' : 'selected'
+        "
+        >{{ number }}</span
+      >
+    </ng-container>
+  </div>
+</section>
