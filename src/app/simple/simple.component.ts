@@ -1,5 +1,7 @@
-import { state, style, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
+
+type State = 'default' | 'clicked';
 
 @Component({
   selector: 'app-simple',
@@ -11,6 +13,7 @@ import { Component } from '@angular/core';
         'default',
         style({
           'background-color': 'orange',
+          cursor: 'pointer',
           height: '100px', // If we don't put "px" it will be percentage: like this --> height: 100
           width: '100px',
         })
@@ -19,11 +22,21 @@ import { Component } from '@angular/core';
         'clicked',
         style({
           backgroundColor: 'blue',
+          cursor: 'pointer',
           height: '250px',
           width: '250px',
         })
       ),
+      transition('default => clicked', animate('250ms 100ms ease-in')), // 'default => clicked' sais when the transition should be fired
     ]),
   ],
 })
-export class SimpleComponent {}
+export class SimpleComponent {
+  clickInfo: State = 'default';
+
+  changeStyle(): void {
+    if (this.clickInfo === 'default') {
+      this.clickInfo = 'clicked';
+    } else this.clickInfo = 'default';
+  }
+}
