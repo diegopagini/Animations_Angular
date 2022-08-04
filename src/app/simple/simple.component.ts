@@ -41,8 +41,8 @@ type State = 'default' | 'clicked' | 'mousedown';
       // Transitions
       transition('default => clicked', animate('250ms 100ms ease-in')), // 'default => clicked' sais when the transition should be fired
       transition('clicked => default', animate('500ms 100ms ease-out')), // 'clicked => default' sais when the transition should be fired
-      transition('default => mousedown', animate('250ms 50ms ease-in')),
-      transition('mousedown => default', animate('250ms 50ms ease-in')),
+      transition('default <=> mousedown', animate('250ms 50ms ease-in')), // <=> for both states, from default to mousedown and
+      // mouse down to default
     ]),
   ],
 })

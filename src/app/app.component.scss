@@ -3,11 +3,14 @@
   padding-bottom: 3rem;
 
   .list {
+    border-bottom: 1px solid black;
     display: flex;
     list-style: none;
+    padding-bottom: 0.25rem;
 
     &__element {
       cursor: pointer;
+      padding: 0 3rem;
     }
 
     .active {
