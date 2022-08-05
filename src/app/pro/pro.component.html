@@ -28,6 +28,13 @@
 </p>
 
 <button class="button" (click)="onAddElement()">Add element</button>
-<div @listState class="element" *ngFor="let element of elements">
+<!-- Animation Events (@listState.start) and (@listState.done) -->
+<div
+  @listState
+  class="element"
+  (@listState.start)="onAnimationStart($event)"
+  (@listState.done)="onAnimationDone($event)"
+  *ngFor="let element of elements"
+>
   {{ element }}
 </div>
