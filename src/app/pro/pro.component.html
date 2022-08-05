@@ -1,0 +1,28 @@
+<button class="button" (click)="toggle()">Toggle me</button>
+<p class="text" @showState *ngIf="isVisible">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident architecto
+  autem dicta soluta unde neque sed, officia optio facilis omnis illum quod,
+  sunt est. Quibusdam asperiores quidem necessitatibus numquam impedit? Lorem
+  ipsum dolor sit amet consectetur, adipisicing elit. Facere earum harum ad
+  autem perspiciatis ratione optio fugit esse ab tempora eaque dolorem,
+  repellendus itaque repudiandae amet inventore ipsa? Omnis, tempore! Lorem
+  ipsum, dolor sit amet consectetur adipisicing elit. Nulla laborum obcaecati
+  omnis quam. Ipsam nesciunt exercitationem ipsa beatae, earum expedita odio
+  corrupti eaque eum consectetur animi quibusdam libero sapiente hic.
+</p>
+
+<div>
+  <button class="button__2" (click)="shrink()">Shrink me</button>
+  <button class="button__2" (click)="onAnimate()">Animate me</button>
+</div>
+
+<p
+  [@animateState]="animate ? 'animated' : 'noAnimated'"
+  class="text"
+  [ngStyle]="{ 'width.px': width }"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident architecto
+  autem dicta soluta unde neque sed, officia optio facilis omnis illum quod,
+  sunt est. Quibusdam asperiores quidem necessitatibus numquam impedit? Lorem
+  ipsum dolor sit amet consectetur, adipisicing elit.
+</p>

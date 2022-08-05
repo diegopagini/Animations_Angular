@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./multiple/multiple.module').then((m) => m.MultipleModule),
   },
+  {
+    path: 'pro',
+    loadChildren: () => import('./pro/pro.module').then((m) => m.ProModule),
+  },
 ];
 
 @NgModule({

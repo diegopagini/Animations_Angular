@@ -1,0 +1,30 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+div {
+  align-items: center;
+  display: flex;
+  padding: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  padding: 1rem;
+  margin: 3rem;
+
+  &__2 {
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 0;
+  }
+}
+
+.text {
+  letter-spacing: 1px;
+  padding: 0 5rem;
+}
