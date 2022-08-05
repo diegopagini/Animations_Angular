@@ -20,7 +20,7 @@ export class MultipleComponent {
   divOne: State = 'default';
   divTwo: State = 'default';
   divThree: State = 'default';
-  numberEntered: number;
+  numberEntered: number | null;
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
   changeStateOne(): void {
@@ -42,7 +42,7 @@ export class MultipleComponent {
     this.numberEntered = (event as InputEvent).target.value;
 
     setTimeout(() => {
-      this.numberEntered = 0;
+      this.numberEntered = null;
     }, 2500);
   }
 }
