@@ -6,7 +6,7 @@
   height: 70vh;
 }
 
-div {
+.container {
   align-items: center;
   display: flex;
   padding: 1rem;
@@ -27,4 +27,11 @@ div {
 .text {
   letter-spacing: 1px;
   padding: 0 5rem;
+}
+
+.element {
+  background-color: lightblue;
+  border: 1px darkblue solid;
+  margin: 0.25rem 0;
+  padding: 0.5rem;
 }

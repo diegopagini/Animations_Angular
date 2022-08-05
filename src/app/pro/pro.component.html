@@ -1,4 +1,4 @@
-<button class="button" (click)="toggle()">Toggle me</button>
+<button class="button" (click)="onToggle()">Toggle me</button>
 <p class="text" @showState *ngIf="isVisible">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident architecto
   autem dicta soluta unde neque sed, officia optio facilis omnis illum quod,
@@ -11,8 +11,8 @@
   corrupti eaque eum consectetur animi quibusdam libero sapiente hic.
 </p>
 
-<div>
-  <button class="button__2" (click)="shrink()">Shrink me</button>
+<div class="container">
+  <button class="button__2" (click)="onShrink()">Shrink me</button>
   <button class="button__2" (click)="onAnimate()">Animate me</button>
 </div>
 
@@ -26,3 +26,8 @@
   sunt est. Quibusdam asperiores quidem necessitatibus numquam impedit? Lorem
   ipsum dolor sit amet consectetur, adipisicing elit.
 </p>
+
+<button class="button" (click)="onAddElement()">Add element</button>
+<div @listState class="element" *ngFor="let element of elements">
+  {{ element }}
+</div>

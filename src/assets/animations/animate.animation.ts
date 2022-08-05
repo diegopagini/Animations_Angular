@@ -13,7 +13,7 @@ export const ANIMATE = trigger('animateState', [
     animate(
       400,
       style({
-        width: '100%',
+        width: '*', // To take the current width. Because is specified in our componente
       })
     ),
   ]),
