@@ -1,0 +1,15 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+div {
+  padding: 3rem;
+
+  button {
+    padding: 1rem 2rem;
+  }
+}
